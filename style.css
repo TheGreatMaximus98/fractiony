@@ -9,6 +9,9 @@
 :root {
     --btn-width: 75px;
     --btn-top-pos: 10vh;
+    --h2p-w: 100px;
+    --h2p-dw: 25px;
+    --btn-dw-multi: 2.25;
 }
 html,body{
     padding:0;
@@ -47,39 +50,50 @@ html,body{
   touch-action: manipulation;
   white-space: nowrap;
 }
-
 .gm:active {
   border-bottom-color: #a2a6ac;
 }
-
 .gm:active:hover {
   border-bottom-color: #a2a6ac;
 }
-
 .gm:hover {
   border-color: #a2a6ac #979aa1 #82858a;
 }
-
 .gm:focus {
   border-color: #e77600;
   box-shadow: rgba(228, 121, 17, .5) 0 0 3px 2px;
   outline: 0;
 }
-.gm-o {
+.r {
+    display: flex;
+}
+.r1 {
     padding:0;
     margin:0;
     position: absolute;
     top: var(--btn-top-pos);
-    left: calc(50vw - (var(--btn-width) / 2));
+    left: calc(50vw - (var(--btn-width) / 2) - (var(--h2p-w) / 2) - (var(--h2p-dw) / 2));
+}
+.gm-o {
+    padding: 0;
+    margin: 0;
     width: var(--btn-width);
     font-family: sans-serif;
+}
+.r2 {
+    padding:0;
+    margin:0;
+    position: absolute;
+    top: calc(var(--btn-top-pos) * var(--btn-dw-multi));
+    left: calc(50vw - (var(--btn-width) / 2) - (var(--h2p-w) / 2) - (var(--h2p-dw) / 2));
 }
 .gm-tt {
     padding:0;
     margin:0;
-    position: absolute;
-    top: calc(var(--btn-top-pos) * 1.75);
-    left: calc(50vw - (var(--btn-width) / 2));
     width: var(--btn-width);
     font-family: sans-serif;
+}
+.h2p {
+    margin-left: var(--h2p-dw);
+    width: var(--h2p-w);
 }
