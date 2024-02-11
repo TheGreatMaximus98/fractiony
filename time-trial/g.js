@@ -1,4 +1,4 @@
-import * as key from "/key/key.js"
+import key from "/key/key.js"
 
 var qstr = ""
 var q = {}
