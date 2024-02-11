@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fractiony - Win</title>
+    <link rel="shortcut icon" href="NaN" type="image/gif">
+</head>
+<body>
+    <div style="position:absolute;z-index: 1;">
+        <h2 style="font-family:sans-serif;user-select:none;">You have won 😃</h2>
+        <button onclick="window.location.href = '/original'">Try Again</button>
+        <audio id="bgm" src="/sfx/win.mp3" autoplay></audio>
+        <audio id="s-bgm" src="/sfx/driftveil-city.mp3" loop></audio>
+        <audio id="nope" src="/sfx/nope.mp3"></audio>
+        <style>button:focus {outline: none;box-shadow: none;}</style>
+    </div>
+    <img style="display:none;position:absolute;padding-left:25vw;z-index: 0;top:0;left:0;width:auto;height:301px;" src="toothless.gif">
+    <script>
+        let cl_am = 0;
+        let ta = false;
+        document.querySelector("body").addEventListener("keydown",(e)=>{
+            if (e.code == "Backslash"){
+                if (ta == false){
+                    ta = true
+                    document.getElementById("bgm").pause()
+                    document.querySelector("h2").innerHTML = "huh??"
+                    document.getElementById("s-bgm").play()
+                    document.querySelector("button").setAttribute("onclick", '')
+                    //document.querySelector("button").setAttribute("onclick", 'document.body.innerHTML = "<video src=\'/sfx/gegagedigedagedago.mp4\' autoplay loop style=\'padding:0;margin:0;width:100vw;height:100vh;\'>";document.querySelector("video").requestFullscreen();')
+                    setTimeout(()=>{
+                        document.querySelector("button").setAttribute("onmouseover", 'document.querySelector("button").remove();document.querySelector("#s-bgm").pause();document.querySelector("img").src = "bruh.jpg";setTimeout(()=>{document.querySelector("#s-bgm").play();document.querySelector("img").src = "toothless.gif";},2500);document.getElementById("nope").play()')
+                        document.title = "i love toothless ☺️"
+                        document.querySelector("h2").innerHTML = "TOOTHLESS!!!"
+                        document.querySelector("head").innerHTML += '<link rel="shortcut icon" href="toothless.gif" type="image/gif">'
+                        document.querySelector("img").style.display = "block"
+                    },3400)
+                }
+            }
+        })
+        window.onload = ()=>{
+            function getCookie(cname) {
+                let name = cname + "=";
+                let decodedCookie = decodeURIComponent(document.cookie);
+                let ca = decodedCookie.split(';');
+                for(let i = 0; i <ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0) {
+                    return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
+            if (getCookie("confWin") != "orig"){
+                document.location.href = "/original/"
+            } else {
+                document.cookie = "confWin=;"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="es.css">
+    <title>Fractiony - Time Trial - Results</title>
+</head>
+<body>
+    <h2 id="score-n">Score: </h2>
+    <button onclick="document.location.href = '/time-trial'">Play Again</button>
+    <button onclick="document.location.href = '/'">Choose a new gamemode</button>
+    <script>
+        function getCookie(cname) {
+            let name = cname + "=";
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+                }
+                if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+                }
+            }
+            return "";
+        }
+        if (getCookie("score") != ""){
+            document.querySelector("#score-n").innerHTML = "Score: "+getCookie("score")
+        } else {
+            document.location.href = "/"
+        }
+    </script>
+</body>
+</html>

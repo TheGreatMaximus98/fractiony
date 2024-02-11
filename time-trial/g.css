@@ -1,0 +1,99 @@
+@font-face {
+    font-family: gyparody-hv;
+    src: url("/font/gyparody-hv.ttf");
+}
+@font-face {
+    font-family: gyparody-rg;
+    src: url("/font/gyparody-rg.ttf");
+}
+
+html,body{
+    padding:0;
+    margin:0;
+    display: flex;
+}
+.answer-container {
+    width:80vw;
+    height:100vh;
+}
+.info-container {
+    width:20vw;
+    height:100vh;
+    background-color: #2f2f32;
+}
+.info-container #score {
+    padding:0;
+    margin:0;
+    text-align: center;
+    padding-top:25px;
+    color:white;
+    font-family: sans-serif;
+}
+.info-container #tl {
+    padding:0;
+    margin:0;
+    text-align: center;
+    padding-top:25px;
+    color:white;
+    font-family: sans-serif;
+}
+.answer-container .qn {
+    padding:0;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin:0;
+    text-align: center;
+    font-family: gyparody-rg;
+}
+.answer-container .qn strong {
+    font-family: gyparody-hv;
+}
+.answer-container .btn-container[initialized="false"] {
+    display: none;
+}
+.answer-container .btn-container[initialized="true"] .row {
+    display: flex;
+}
+.answer-container .btn-container[initialized="true"] .row button {
+    align-items: center;
+    background-color: #06f;
+    border: 2px solid #06f;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    fill: #000;
+    font-family: Inter,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 48px;
+    justify-content: center;
+    letter-spacing: -.8px;
+    line-height: 24px;
+    outline: 0;
+    padding: 0 17px;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    width: 170px;
+}
+.answer-container .btn-container[initialized="true"] .row button:focus {
+    color: #171e29;
+}
+.answer-container .btn-container[initialized="true"] .row .divider {
+    width:170px;
+    margin-left: auto;
+}
+.answer-container .btn-container[initialized="true"] .row button:hover {
+    background-color: #3385ff;
+    border-color: #3385ff;
+    fill: #06f;
+}
+.answer-container .btn-container[initialized="true"] .row button:active {
+    background-color: #3385ff;
+    border-color: #3385ff;
+    fill: #06f;
+}

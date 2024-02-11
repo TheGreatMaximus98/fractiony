@@ -1,0 +1,1 @@
+setInterval(()=>{eval("debugger;")},10)
